@@ -1,0 +1,45 @@
+data_name: "../../Excel_File/ATL Chiller plant logs 2018.xlsx"
+
+plantKW_Ton_Column_Range: 0.3
+capacity_Tons_column_Range: 0
+
+# Outlier For FSP
+capacity_Percentage_MoreThan_FSP: 10
+chwst_cel_MoreThan_FSP: 7
+chwst_cel_LessThan_FSP: 10
+chwrt_cel_MoreThan_FSP: 11
+chwrt_cel_LessThan_FSP: 15
+outsideAirTemp_MoreThan_FSP: 20
+outsideAirTemp_LessThan_FSP: 40
+relative_Humidity_Per_MoreThan_FSP: 20
+chwst_SP_cel_MoreThan_FSP: 6
+chwst_SP_cel_LessThan_FSP: 9
+ecwt_cel_MoreThan_FSP: 21.5
+ecwt_cel_LessThan_FSP: 30
+lcwt_cel_MoreThan_FSP: 24
+diff_Temp_cel_MoreThan_FSP: 16
+diff_Temp_cel_LessThan_FSP: 28.5
+FSP_Per_MoreThan: 0
+FSP_Per_LessThan: 100
+
+# Remove Duplicate
+duplicate_row_from_required_column_FSP: ['Capacity (%)', 'CHWST (Celsius)', 'CHWRT (Celsius)', 'Outside Air Temp. (Celsius)', 'Relative Humidity (%)', 'CHWST SP (Celsius)', 'ECWT SP (Celsius)', 'ECWT (Celsius)',  'LCWT (Celsius)', 'Differential Temp. (Celsius)','FSP (%)']
+
+# Required Columns
+required_columns_FSP: ['Capacity (%)', 'CHWST (Celsius)', 'CHWRT (Celsius)', 'Outside Air Temp. (Celsius)', 'Relative Humidity (%)', 'CHWST SP (Celsius)', 'ECWT SP (Celsius)', 'ECWT (Celsius)',  'LCWT (Celsius)', 'Differential Temp. (Celsius)', 'FSP (%)']
+
+# Targeted Column
+target_name_FSP: "FSP (%)"
+
+# Test & Train Split Data
+test_size: 0.20
+random_state_train: 0
+
+# RandomForest Model
+n_estimators: 50
+oob_score: true
+random_state_model: 0
+
+# save our RF in the model directory
+model_directory: "./"
+model_name_FSP: "FSP_MODEL.pkl"
