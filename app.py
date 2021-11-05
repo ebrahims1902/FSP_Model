@@ -9,14 +9,14 @@ model = pickle.load(open("FSP_MODEL.pkll", 'rb'))
 
 @app.route('/')
 def helloworld():
-    return render_template('FSP.html')
+    return render_template('home.html')
 
 @app.route('/predict', methods=['GET','POST'])
 def predict():
     float_features = [np.float64(x) for x in request.form.values()]
     final = [np.array(float_features)]
     prediction = model.predict(final)
-    return render_template('FSP.html', pred=prediction)
+    return render_template('predict.html', pred=prediction)
 
 if __name__ == '__main__':
     app.run(debug=True)
